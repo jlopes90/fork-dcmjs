@@ -935,7 +935,7 @@ function insertOverlappingPixelDataPlanar(
                 continue;
             }
 
-            const sourceImageMetadata = metadataProvider.get(
+            /* const sourceImageMetadata = metadataProvider.get(
                 "instance",
                 imageId
             );
@@ -948,7 +948,7 @@ function insertOverlappingPixelDataPlanar(
                         "respect to the source image reference frame. This is not yet supported. " +
                         "Aborting segmentation loading. "
                 );
-            }
+            } */
 
             const imageIdIndex = imageIds.findIndex(
                 element => element === imageId
@@ -1106,7 +1106,7 @@ function insertPixelDataPlanar(
             continue;
         }
 
-        const sourceImageMetadata = metadataProvider.get("instance", imageId);
+        /* const sourceImageMetadata = metadataProvider.get("instance", imageId);
         if (
             Rows !== sourceImageMetadata.Rows ||
             Columns !== sourceImageMetadata.Columns
@@ -1116,7 +1116,7 @@ function insertPixelDataPlanar(
                     "respect to the source image reference frame. This is not yet supported. " +
                     "Aborting segmentation loading. "
             );
-        }
+        } */
 
         const imageIdIndex = imageIds.findIndex(element => element === imageId);
         const byteOffset = sliceLength * 2 * imageIdIndex; // 2 bytes/pixel

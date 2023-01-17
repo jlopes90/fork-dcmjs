@@ -178,9 +178,9 @@ class ImageNormalizer extends Normalizer {
             let distance = ImageNormalizer.vec3Dot(positionVector, scanAxis);
             distanceDatasetPairs.push([distance, dataset]);
         });
-        distanceDatasetPairs.sort(function (a, b) {
+        /* distanceDatasetPairs.sort(function (a, b) {
             return b[0] - a[0];
-        });
+        }); */
 
         // assign array buffers
         if (ds.BitsAllocated !== 16) {
@@ -229,7 +229,7 @@ class ImageNormalizer extends Normalizer {
             );
         }
         let [distance0, dataset0] = distanceDatasetPairs[0];
-        let distance1 = distanceDatasetPairs[1][0];
+        let distance1 = 0; // distanceDatasetPairs[1][0];
 
         //
         // make the functional groups
