@@ -230,7 +230,7 @@ function _createSegFromImages(images, isMultiframe, options) {
         const image = images[0];
         const arrayBuffer = image.data.byteArray.buffer;
 
-        const dicomData = DicomMessage.readFile(arrayBuffer);
+        const dicomData = DicomMessage.readFile(arrayBuffer, options);
         const dataset = DicomMetaDictionary.naturalizeDataset(dicomData.dict);
 
         dataset._meta = DicomMetaDictionary.namifyDataset(dicomData.meta);
@@ -240,7 +240,7 @@ function _createSegFromImages(images, isMultiframe, options) {
         for (let i = 0; i < images.length; i++) {
             const image = images[i];
             const arrayBuffer = image.data.byteArray.buffer;
-            const dicomData = DicomMessage.readFile(arrayBuffer);
+            const dicomData = DicomMessage.readFile(arrayBuffer, options);
             const dataset = DicomMetaDictionary.naturalizeDataset(
                 dicomData.dict
             );
@@ -275,10 +275,11 @@ function generateToolState(
     imageIds,
     arrayBuffer,
     metadataProvider,
+    options,
     skipOverlapping = false,
     tolerance = 1e-3
 ) {
-    const dicomData = DicomMessage.readFile(arrayBuffer);
+    const dicomData = DicomMessage.readFile(arrayBuffer, options);
     const dataset = DicomMetaDictionary.naturalizeDataset(dicomData.dict);
     dataset._meta = DicomMetaDictionary.namifyDataset(dicomData.meta);
     const multiframe = Normalizer.normalizeToDataset([dataset]);
