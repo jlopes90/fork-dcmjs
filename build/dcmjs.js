@@ -13273,7 +13273,10 @@
 	      };
 	      var frameNumber = 1;
 	      this.datasets.forEach(function (dataset) {
-	        if (ds.NumberOfFrames === 1) ds.PerFrameFunctionalGroupsSequence = [ds.PerFrameFunctionalGroupsSequence];
+	        /* if (ds.NumberOfFrames === 1)
+	            ds.PerFrameFunctionalGroupsSequence = [
+	                ds.PerFrameFunctionalGroupsSequence
+	            ]; */
 	        ds.PerFrameFunctionalGroupsSequence[frameNumber - 1].FrameContentSequence = {
 	          FrameAcquisitionDuration: 0,
 	          StackID: 1,

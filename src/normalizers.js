@@ -345,10 +345,10 @@ class ImageNormalizer extends Normalizer {
         };
         let frameNumber = 1;
         this.datasets.forEach(dataset => {
-            if (ds.NumberOfFrames === 1)
+            /* if (ds.NumberOfFrames === 1)
                 ds.PerFrameFunctionalGroupsSequence = [
                     ds.PerFrameFunctionalGroupsSequence
-                ];
+                ]; */
             ds.PerFrameFunctionalGroupsSequence[
                 frameNumber - 1
             ].FrameContentSequence = {
