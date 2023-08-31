@@ -4,7 +4,11 @@ import Length from "./Length.js";
 import CobbAngle from "./CobbAngle";
 import Bidirectional from "./Bidirectional.js";
 import Polyline from "./Polyline.js";
-import Ellipse from "./Ellipse.js";
+import Polygon from "./Polygon.js";
+import Ellipse from "./Ellipse";
+import Circle from "./Circle";
+import Calibration from "./Calibration";
+import unit2CodingValue from "./unit2CodingValue";
 
 // To be implemented:
 // - Cornerstone Probe
@@ -69,7 +73,11 @@ const TID300 = {
     CobbAngle,
     Bidirectional,
     Polyline,
-    Ellipse
+    Polygon,
+    Ellipse,
+    Circle,
+    Calibration,
+    unit2CodingValue
 };
 
 export { TID300Measurement, Length };
